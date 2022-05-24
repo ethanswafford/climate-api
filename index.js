@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 // scrape website or url for any 'href' containing the word "climate"
 // stored response.data in local variable 'html' and use local variables 'url' and 'title' to 
-// order a function to organize and render content
+// order a function to organize and render content in the array
 
 app.get('/news', (req, res) => {
     axios.get('https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature')
@@ -39,6 +39,6 @@ app.get('/news', (req, res) => {
         }).catch((err) => console.log(err))
 })
 
-// built in node module function using 'start' under test in the package.json file 
+// built in node module function using 'start' under scripts in the package.json file 
 
 app.listen(PORT, () => console.log(`server initialized on PORT: ${PORT}`))
