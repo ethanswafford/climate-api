@@ -56,7 +56,23 @@ app.get('/', (req, res) => {
 // order a function to organize and render content in the array
 
 app.get('/news', (req, res) => {
-    res.json(articles)
+    axios.get('https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature')
+        .then((response) => {
+
+            const html = response.data
+            const $ = cheerio.load(html)
+
+            $('a:contains("climate")', html).each(function() {
+                const title = $(this).text()
+                const url = $(this).attr('href')
+
+                articles.push({
+                    title,
+                    url
+                })
+            })
+            res.json(articles)
+        }).catch((err) => console.log(err))
 })
 
 // built in node module function using 'start' under scripts in the package.json file 
