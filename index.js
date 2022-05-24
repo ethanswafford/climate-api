@@ -20,6 +20,10 @@ const onlinePublications = [{
     {
         name: 'MicroSoft/Bing',
         address: 'https://www.bing.com/news/search?q=Climate+Change&qpvt=climate+change+&FORM=EWRE'
+    },
+    {
+        name: 'the Guardian',
+        address: 'https://www.theguardian.com/environment/climate-crisis'
     }
 ]
 
@@ -56,7 +60,7 @@ app.get('/', (req, res) => {
 // order a function to organize and render content in the array
 
 app.get('/news', (req, res) => {
-    axios.get('https://www.climate.gov/news-features/understanding-climate/climate-change-global-temperature')
+    axios.get('https://www.theguardian.com/environment/climate-crisis')
         .then((response) => {
 
             const html = response.data
