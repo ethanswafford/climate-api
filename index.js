@@ -29,6 +29,8 @@ const onlinePublications = [{
 
 const articles = []
 
+// adding content to the array of objects 
+
 onlinePublications.forEach(onlinePublication => {
     axios.get(onlinePublication.address)
         .then(response => {
