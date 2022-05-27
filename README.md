@@ -1,9 +1,9 @@
 # climate-api
 
-small and simple api for climate change built for education/practice
+Small and simple api for climate change built for education/practice
 with nodejs and javascript  
 
-in order to run the API you need to install the required node modules
+In order to run the API you need to install the required node modules
 in your terminal by running the commands: npm i express,
                                           npm i axios,
                                           npm i cheerio,
